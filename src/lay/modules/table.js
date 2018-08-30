@@ -1484,6 +1484,11 @@ layui.define(['laytpl', 'laypage', 'layer', 'form', 'util'], function(exports){
       setRowEvent.call(this, 'row');
     }).on('dblclick', 'tr', function(){ //双击行
       setRowEvent.call(this, 'rowDouble');
+    }).on('mousedown', 'tr', function(e){ //右击行
+      //鼠标右键事件触发
+		    if(3 == e.which){	
+        setRowEvent.call(this, 'rowRight');
+      }
     });
     
     //创建行单击、双击事件监听
